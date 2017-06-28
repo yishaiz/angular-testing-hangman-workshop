@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { GameComponent } from "./game/game.component";
 import { GameService } from "./services/game.service";
 import { KeyboardComponent } from "./keyboard/keyboard.component";
+import { LetterComponent } from "./letter/letter.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
       declarations : [
         AppComponent,
         GameComponent,
-        KeyboardComponent
+        KeyboardComponent,
+        LetterComponent
       ],
       providers : [
         GameService
