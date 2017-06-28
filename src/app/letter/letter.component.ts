@@ -34,7 +34,7 @@ export class LetterComponent implements OnInit {
 
     keyClick() : void {
         this.keyPress.emit(this.char);
-         
+        this.isSelectedLetter = true;
     }
 
 
