@@ -111,5 +111,19 @@ describe('LetterComponent - revealed', () => {
         );
     });
 
+    it('should not be revealed as when letter is NOT a whitespace', () => {
+        component.char = "a";
+
+        fixture.detectChanges();
+
+        fixture.whenStable().then(() => {
+                // fixture.detectChanges();
+
+                expect(component.isWhitespace()).toBe(false);
+                expect(component.isRevealed()).toBe(false);
+            }
+        );
+    });
+
 });
 // ---------------------------
