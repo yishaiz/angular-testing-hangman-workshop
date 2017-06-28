@@ -22,4 +22,11 @@ describe('KeyboardComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+  it(`should have letters'`, () => {
+    const expected : string[] = "abcdefghijklmnopqrstuvwxyz".split('');
+    const fixture = TestBed.createComponent(KeyboardComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.keyboardLetters).toEqual(expected);
+  });
+
 });

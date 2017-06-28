@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KeyboardComponent implements OnInit {
 
+  keyboardLetters : string [] = [];
   constructor() { }
 
   ngOnInit() {
