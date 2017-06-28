@@ -8,6 +8,7 @@ export class GameService {
 
     private word : string           = "guess";
     public keyboardLetters : string = "abcdefghijklmnopqrstuvwxyz";
+  selectedLetters : string[] = [];
 
     getWordToGuess() : string {
         return this.word;
@@ -21,9 +22,13 @@ export class GameService {
         this.word = word;
     }
 
-    isSelectedLetter(letter : string) : boolean {
-        return null;
-    }
+  isSelectedLetter(letter : string) : boolean {
+    // console.log(this.selectedLetters.findIndex(l => l == letter));
+
+    return this
+        .selectedLetters
+        .findIndex(l => l == letter) > -1;
+  }
 
 
 }
