@@ -142,7 +142,7 @@ describe('LetterComponent - revealed', () => {
                 fixture.detectChanges();
 
                 expect(component.isWhitespace()).toBe(false);
-                expect(component.isRevealed()).toBe(false);
+                expect(component.isRevealed()).toBe(true);
 
             }
         );
