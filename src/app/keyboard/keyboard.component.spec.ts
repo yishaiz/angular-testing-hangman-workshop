@@ -32,6 +32,7 @@ describe('KeyboardComponent', () => {
     const expected : string[] = "abcdefghijklmnopqrstuvwxyz".split('');
     const fixture = TestBed.createComponent(KeyboardComponent);
     const app = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
     expect(app.keyboardLetters).toEqual(expected);
   });
 
