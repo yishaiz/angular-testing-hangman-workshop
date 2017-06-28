@@ -8,7 +8,7 @@ export class GameService {
 
     private word : string              = "guess";
     public keyboardLetters : string    = "abcdefghijklmnopqrstuvwxyz";
-            selectedLetters : string[] = [];
+    private selectedLetters : string[] = [];
 
     getWordToGuess() : string {
         return this.word;
@@ -36,24 +36,34 @@ export class GameService {
         this.selectedLetters.push(letter);
     }
 
-  getRevealedLettersArray() : string [] {
-    const guessWordStatus = [];
-    const wordCharArray = this.word.split('');
+    getRevealedLettersArray() : string [] {
+        const guessWordStatus = [];
+        const wordCharArray   = this.word.split('');
 
-    wordCharArray.forEach((char) => {
-      let letter = '_';
+        return wordCharArray.map((char) => {
+            const shouldShowChar : boolean =
+                      char === ' ' || this.selectedLetters.findIndex(l => l == char) > -1;
 
-      const shouldShowChar : boolean =
-        char === ' ' || this.selectedLetters.findIndex(l => l == char) > -1;
+            return shouldShowChar ? char : '_';
+        });
 
-      if (shouldShowChar) {
-        letter = char;
-      }
+        /*
+         wordCharArray.forEach((char) => {
+         let letter = '_';
 
-      guessWordStatus.push(letter)
+         const shouldShowChar : boolean =
+         char === ' ' || this.selectedLetters.findIndex(l => l == char) > -1;
 
-    });
+         if (shouldShowChar) {
+         letter = char;
+         }
 
-    return guessWordStatus;
-  }
+         guessWordStatus.push(letter)
+
+         });
+
+         return guessWordStatus;
+
+         */
+    }
 }
