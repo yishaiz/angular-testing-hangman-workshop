@@ -20,11 +20,12 @@ describe('LetterComponent', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(LetterComponent);
-        de      = fixture.debugElement.query(By.css('button'));
-        el      = de.nativeElement;
+        fixture   = TestBed.createComponent(LetterComponent);
+        component = fixture.debugElement.componentInstance;
 
-        component      = fixture.debugElement.componentInstance;
+        de = fixture.debugElement.query(By.css('button'));
+        el = de.nativeElement;
+
         component.char = "x";
 
         fixture.detectChanges();
@@ -43,5 +44,23 @@ describe('LetterComponent', () => {
                 expect(el.textContent).toBe('k');
             }
         );
+    });
+
+    it('should emit selected letter event on key click', () => {
+        const letter : string = 'k';
+
+        component.char = letter;
+
+        fixture.detectChanges();
+
+        let selectedKey : string;
+
+        component.keyPress.subscribe((value) => selectedKey = value);
+
+        fixture.whenStable().then(() => {
+            de.triggerEventHandler('click', null);
+
+            expect(selectedKey).toBe('d');
+        });
     });
 });

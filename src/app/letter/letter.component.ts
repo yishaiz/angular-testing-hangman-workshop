@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector : 'app-letter',
     template : `
-        <button type="button">{{char}}</button>
+        <button type="button" (click)="keyClick()">{{char}}</button>
     `,
     styles : []
 })
@@ -11,12 +11,17 @@ export class LetterComponent implements OnInit {
 
 
     @Input() char : string;
+    @Output() keyPress : EventEmitter<string> = new EventEmitter<string>();
 
     constructor() {
     }
 
-    ngOnInit() : void {
+    ngOnInit() {
         // this.char = "r";
+    }
+
+    keyClick() : void {
+
     }
 
 }
