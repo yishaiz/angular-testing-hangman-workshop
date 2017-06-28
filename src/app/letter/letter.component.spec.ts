@@ -24,10 +24,10 @@ describe('LetterComponent', () => {
         de      = fixture.debugElement.query(By.css('button'));
         el      = de.nativeElement;
 
-        component = fixture.debugElement.componentInstance;
-    component.char = "x";
+        component      = fixture.debugElement.componentInstance;
+        component.char = "x";
 
-    fixture.detectChanges();
+        fixture.detectChanges();
     });
 
     it('should be created', () => {
@@ -35,13 +35,13 @@ describe('LetterComponent', () => {
     });
 
     it('should display injected letter', () => {
-        component.char = "g";
+        component.char = "k";
 
-    fixture.detectChanges();
+        fixture.detectChanges();
 
-    fixture.whenStable().then(() => {
-        expect(el.textContent).toBe('k');
-      }
-    );
-  });
+        fixture.whenStable().then(() => {
+                expect(el.textContent).toBe('k');
+            }
+        );
+    });
 });
