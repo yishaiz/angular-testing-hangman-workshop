@@ -16,5 +16,8 @@ export class GameService {
         return this.word.split('');
     }
 
+  setWordToGuess(word : string) : void {
+    this.word = word;
+  }
 
 }

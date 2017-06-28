@@ -21,9 +21,14 @@ describe('GameService', () => {
         const wordLetters : any[] =
                   [ 'g', 'u', 'e', 's', 's' ];
 
-    // expect(service.getWordLetters()).toBe(wordLetters);
-    expect(service.getWordLetters()).toEqual(wordLetters);
+        // expect(service.getWordLetters()).toBe(wordLetters);
+        expect(service.getWordLetters()).toEqual(wordLetters);
     }));
 
+    it('should give a guess word', inject([ GameService ], (service : GameService) => {
+        service.setWordToGuess("another word");
 
+        // expect(service.getWordToGuess()).toBe("guess");
+        expect(service.getWordToGuess()).toBe("another word");
+    }));
 });
