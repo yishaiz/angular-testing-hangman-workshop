@@ -3,13 +3,15 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { GameComponent } from "./game/game.component";
 import { GameService } from "./services/game.service";
+import { KeyboardComponent } from "./keyboard/keyboard.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations : [
         AppComponent,
-        GameComponent
+        GameComponent,
+        KeyboardComponent
       ],
       providers : [
         GameService
