@@ -24,4 +24,12 @@ export class LetterComponent implements OnInit {
         this.keyPress.emit(this.char);
     }
 
+
+    isRevealed() : boolean {
+        return null;
+    }
+
+    isWhitespace() : boolean {
+        return null;
+    }
 }

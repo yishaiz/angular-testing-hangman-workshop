@@ -60,7 +60,26 @@ describe('LetterComponent', () => {
         fixture.whenStable().then(() => {
             de.triggerEventHandler('click', null);
 
-      expect(selectedKey).toBe(letter);
+            expect(selectedKey).toBe(letter);
         });
     });
-});
+
+
+//check is revealed, is whitespace
+
+
+    it('should be revealed as when letter is a white', () => {
+        component.char = " ";
+
+        fixture.detectChanges();
+
+        fixture.whenStable().then(() => {
+                expect(component.isWhitespace()).toBe(true);
+                expect(component.isRevealed()).toBe(true);
+            }
+        );
+    });
+
+})
+
+// ---------------------------
