@@ -9,18 +9,18 @@ import { LetterComponent } from './letter/letter.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations : [
-    AppComponent,
-    GameComponent,
-    KeyboardComponent,
-    LetterComponent,
-    LoginComponent
-  ],
-  imports : [
-    BrowserModule
-  ],
-  providers : [ GameService ],
-  bootstrap : [ AppComponent ]
+    declarations : [
+        AppComponent,
+        GameComponent,
+        KeyboardComponent,
+        LetterComponent,
+        LoginComponent
+    ],
+    imports : [
+        BrowserModule
+    ],
+    providers : [ GameService ],
+    bootstrap : [ AppComponent ]
 })
 export class AppModule {
 }

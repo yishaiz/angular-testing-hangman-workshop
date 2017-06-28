@@ -3,13 +3,13 @@ import { TestBed, inject } from '@angular/core/testing';
 import { GameService } from './game.service';
 
 describe('GameService', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers : [
-        GameService
-      ]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            providers : [
+                GameService
+            ]
+        });
     });
-  });
 
     it('should be created', inject([ GameService ], (gameService : GameService) => {
         expect(gameService).toBeTruthy();
@@ -28,7 +28,7 @@ describe('GameService', () => {
     }));
 
 
-  it('should give a guess word - another word', inject([ GameService ], (gameService : GameService) => {
+    it('should give a guess word - another word', inject([ GameService ], (gameService : GameService) => {
         gameService.setWordToGuess("another word");
 
         // expect(gameService.getWordToGuess()).toBe("guess");

@@ -148,6 +148,42 @@ describe('LetterComponent - revealed', () => {
         );
     });
 
+    /*
+     it('should have css class when reveal', () => {
+     component.char = "a";
+
+     fixture.detectChanges();
+
+     fixture.whenStable().then(() => {
+     component.isGuessed = true;
+
+     fixture.detectChanges();
+
+     // expect(component.isWhitespace()).toBe(false);
+     // expect(component.isRevealed()).toBe(true);
+     expect(fixture.nativeElement.classList).toContain("aaaaa");
+
+     // expect(menuDropDownButtonEl.hasAttribute('hidden')).toEqual(true);
+
+     }
+     );
+     });
+     */
+
+
+    it('should check if letter was selected', () => {
+        fixture.detectChanges();
+
+        fixture.whenStable().then(() => {
+            expect(component.isSelected()).not.toBe(true);
+
+            de.triggerEventHandler('click', null);
+
+            expect(component.isSelected()).toBe(true);
+        });
+    });
+
+
 });
 // ---------------------------
 

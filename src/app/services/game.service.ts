@@ -18,10 +18,11 @@ export class GameService {
         return this.word.split('');
     }
 
-  //no test
-  getKeyboardLetters() : string [] {
-    return this.keyboardLetters.split('');
-  }
+    //no test
+    getKeyboardLetters() : string [] {
+        return this.keyboardLetters.split('');
+    }
+
     setWordToGuess(word : string) : void {
         this.word = word;
     }
