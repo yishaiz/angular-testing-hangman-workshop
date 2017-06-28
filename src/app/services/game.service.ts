@@ -36,4 +36,7 @@ export class GameService {
         this.selectedLetters.push(letter);
     }
 
+    getRevealedLettersArray() : string [] {
+        return [];
+    }
 }
