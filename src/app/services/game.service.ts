@@ -36,7 +36,24 @@ export class GameService {
         this.selectedLetters.push(letter);
     }
 
-    getRevealedLettersArray() : string [] {
-        return [];
-    }
+  getRevealedLettersArray() : string [] {
+    const guessWordStatus = [];
+    const wordCharArray = this.word.split('');
+
+    wordCharArray.forEach((char) => {
+      let letter = '_';
+
+      const shouldShowChar : boolean =
+        char === ' ' || this.selectedLetters.findIndex(l => l == char) > -1;
+
+      if (shouldShowChar) {
+        letter = char;
+      }
+
+      guessWordStatus.push(letter)
+
+    });
+
+    return guessWordStatus;
+  }
 }
