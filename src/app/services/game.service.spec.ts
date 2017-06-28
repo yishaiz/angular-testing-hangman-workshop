@@ -12,4 +12,10 @@ describe('GameService', () => {
   it('should be created', inject([ GameService ], (service: GameService) => {
     expect(service).toBeTruthy();
   }));
+
+  it('should have a guess word', inject([ GameService ], (service: GameService) => {
+    expect(service.getWordToGuess()).toBe("guess");
+  }));
+
+
 });

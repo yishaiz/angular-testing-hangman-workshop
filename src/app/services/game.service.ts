@@ -3,6 +3,11 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class GameService {
 
-  constructor() { }
+  constructor() {
+  }
+
+  getWordToGuess(): string {
+    return ""; // should be guess
+  }
 
 }
