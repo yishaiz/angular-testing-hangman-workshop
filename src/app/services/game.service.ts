@@ -42,7 +42,8 @@ export class GameService {
 
         return wordCharArray.map((char) => {
             const shouldShowChar : boolean =
-                      char === ' ' || this.selectedLetters.findIndex(l => l == char) > -1;
+                      // char === ' ' || this.selectedLetters.findIndex(l => l == char) > -1;
+                      char === ' ' || this.isSelectedLetter(char);
 
             return shouldShowChar ? char : '_';
         });
