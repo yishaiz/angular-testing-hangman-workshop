@@ -7,7 +7,7 @@ export class GameService {
     }
 
     private word : string = "guess";
-  public keyboardLetters : string = "";
+  public keyboardLetters : string = "abcdefghijklmnopqrstuvwxyz";
 
     getWordToGuess() : string {
         return this.word;
