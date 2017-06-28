@@ -30,8 +30,10 @@ export class GameService {
                 .findIndex(l => l == letter) > -1;
     }
 
-
     selectLetter(letter : string) : void {
-        // todo:
+        // no need to check if already chosen
+
+        this.selectedLetters.push(letter);
     }
+
 }
