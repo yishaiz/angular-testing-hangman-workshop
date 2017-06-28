@@ -9,27 +9,30 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class LetterComponent implements OnInit {
 
+  isRevealedLetter : boolean = false;
 
-    @Input() char : string;
-    @Output() keyPress : EventEmitter<string> = new EventEmitter<string>();
+  @Input() char : string;
+  @Input() isGuessed : boolean;
 
-    constructor() {
-    }
+  @Output() keyPress : EventEmitter<string> = new EventEmitter<string>();
 
-    ngOnInit() {
-        // this.char = "r";
-    }
+  constructor() {
+  }
 
-    keyClick() : void {
-        this.keyPress.emit(this.char);
-    }
+  ngOnInit() {
+    // this.char = "r";
+  }
+
+  keyClick() : void {
+    this.keyPress.emit(this.char);
+  }
 
 
-    isRevealed() : boolean {
-        return null;
-    }
+  isRevealed() : boolean {
+    return null;
+  }
 
-    isWhitespace() : boolean {
-        return null;
-    }
+  isWhitespace() : boolean {
+    return this.char ===' ';
+  }
 }
