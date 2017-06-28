@@ -60,7 +60,7 @@ describe('LetterComponent', () => {
         fixture.whenStable().then(() => {
             de.triggerEventHandler('click', null);
 
-            expect(selectedKey).toBe('d');
+      expect(selectedKey).toBe(letter);
         });
     });
 });
