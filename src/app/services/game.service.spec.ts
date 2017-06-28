@@ -41,11 +41,23 @@ describe('GameService', () => {
 
     // --------------------------------------------------
 
-    it('should select a key in keyboard', inject([ GameService ], (service : GameService) => {
+    it('should select a key in keyboard - is selected', inject([ GameService ], (service : GameService) => {
         //no need this:
         // service.setWordToGuess("another word");
 
         expect(service.isSelectedLetter("a")).toBe(false);
+    }));
+
+    it('should select a key in keyboard - select', inject([ GameService ], (service : GameService) => {
+        //no need this:
+        // service.setWordToGuess("another word");
+
+        service.selectLetter('f');
+
+        expect(service.isSelectedLetter("a")).toBe(false);
+        expect(service.isSelectedLetter("f")).toBe(true);
 
     }));
+
+
 });
