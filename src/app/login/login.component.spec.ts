@@ -5,7 +5,7 @@ import { Component, DebugElement } from "@angular/core";
 import { By } from "@angular/platform-browser";
 
 
-describe('Component: Login', () => {
+xdescribe('Component: Login', () => {
 
   let component : LoginComponent;
   let fixture : ComponentFixture<LoginComponent>;

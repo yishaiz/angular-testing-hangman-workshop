@@ -17,9 +17,6 @@ describe('LetterComponent', () => {
             ]
         })
                .compileComponents();
-    }));
-
-    beforeEach(() => {
         fixture   = TestBed.createComponent(LetterComponent);
         component = fixture.debugElement.componentInstance;
 
@@ -29,7 +26,7 @@ describe('LetterComponent', () => {
         component.char = "x";
 
         fixture.detectChanges();
-    });
+    }));
 
     it('should be created', () => {
         expect(component).toBeTruthy();
@@ -65,21 +62,54 @@ describe('LetterComponent', () => {
     });
 
 
+});
+
+
 //check is revealed, is whitespace
 
 
-    it('should be revealed as when letter is a white', () => {
+describe('LetterComponent - revealed', () => {
+    let component : LetterComponent;
+    let fixture : ComponentFixture<LetterComponent>;
+    let de : DebugElement;
+    let el : HTMLElement;
+
+    beforeEach(async(() => {
+        TestBed
+            .configureTestingModule({
+                declarations : [
+                    LetterComponent
+                ]
+            })
+            .compileComponents();
+
+        fixture   = TestBed.createComponent(LetterComponent);
+        component = fixture.debugElement.componentInstance;
+
+        de = fixture.debugElement.query(By.css('button'));
+        el = de.nativeElement;
+
+        // component.char = " ";
+        //
+        // fixture.detectChanges();
+    }));
+
+//check is revealed, is whitespace
+
+
+    it('should be revealed as when letter is a whitespace', () => {
         component.char = " ";
 
         fixture.detectChanges();
 
         fixture.whenStable().then(() => {
+                // fixture.detectChanges();
+
                 expect(component.isWhitespace()).toBe(true);
                 expect(component.isRevealed()).toBe(true);
             }
         );
     });
 
-})
-
+});
 // ---------------------------

@@ -12,7 +12,13 @@ export class LetterComponent implements OnInit {
   isRevealedLetter : boolean = false;
 
   @Input() char : string;
-  @Input() isGuessed : boolean;
+
+  @Input()
+  set  isGuessed(value : boolean) {
+    if (value == true) {
+      this.isRevealedLetter = true;
+    }
+  }
 
   @Output() keyPress : EventEmitter<string> = new EventEmitter<string>();
 
@@ -21,6 +27,7 @@ export class LetterComponent implements OnInit {
 
   ngOnInit() {
     // this.char = "r";
+    this.isRevealedLetter = this.isWhitespace();
   }
 
   keyClick() : void {
@@ -29,7 +36,7 @@ export class LetterComponent implements OnInit {
 
 
   isRevealed() : boolean {
-    return null;
+    return this.isRevealedLetter;
   }
 
   isWhitespace() : boolean {
