@@ -5,6 +5,7 @@ import { GameComponent } from "./game/game.component";
 import { GameService } from "./services/game.service";
 import { KeyboardComponent } from "./keyboard/keyboard.component";
 import { LetterComponent } from "./letter/letter.component";
+import { FormsModule } from "@angular/forms";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

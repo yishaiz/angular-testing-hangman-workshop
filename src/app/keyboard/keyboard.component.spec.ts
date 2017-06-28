@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { KeyboardComponent } from './keyboard.component';
 import { GameService } from "../services/game.service";
+import { LetterComponent } from "../letter/letter.component";
+import { FormsModule } from "@angular/forms";
 
 describe('KeyboardComponent', () => {
   let component : KeyboardComponent;
@@ -10,10 +12,14 @@ describe('KeyboardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations : [
-        KeyboardComponent
+        KeyboardComponent,
+        LetterComponent
       ],
       providers : [
         GameService
+      ],
+      imports : [
+        FormsModule
       ]
     })
       .compileComponents();
