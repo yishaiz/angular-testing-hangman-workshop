@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from "../services/game.service";
 
 @Component({
   selector: 'app-keyboard',
@@ -12,9 +13,12 @@ import { Component, OnInit } from '@angular/core';
 export class KeyboardComponent implements OnInit {
 
   keyboardLetters : string [] = [];
-  constructor() { }
+  constructor(private gameSevice : GameService) {
+  }
 
   ngOnInit() {
+    this.keyboardLetters =
+      this.gameSevice.getKeyboardLetters();
   }
 
 }
