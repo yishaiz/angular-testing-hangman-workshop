@@ -1,22 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector : 'app-letter',
-  template : `
-      <button type="button">{{char}}</button>
-  `,
-  styles : []
+    selector : 'app-letter',
+    template : `
+        <button type="button">{{char}}</button>
+    `,
+    styles : []
 })
 export class LetterComponent implements OnInit {
 
 
-  @Input() char : string;
+    @Input() char : string;
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit() {
-    this.char = "r";
-  }
+    ngOnInit() : void {
+        // this.char = "r";
+    }
 
 }
