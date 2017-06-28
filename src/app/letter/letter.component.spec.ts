@@ -25,7 +25,9 @@ describe('LetterComponent', () => {
         el      = de.nativeElement;
 
         component = fixture.debugElement.componentInstance;
+    component.char = "x";
 
+    fixture.detectChanges();
     });
 
     it('should be created', () => {
@@ -35,6 +37,11 @@ describe('LetterComponent', () => {
     it('should display injected letter', () => {
         component.char = "g";
 
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
         expect(el.textContent).toBe('k');
-    });
+      }
+    );
+  });
 });
