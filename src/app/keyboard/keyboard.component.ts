@@ -7,6 +7,7 @@ import { GameService } from "../services/game.service";
     <p>
       keyboard Works!
     </p>
+    <app-letter [char]="'b'"></app-letter>
   `,
   styles: []
 })
