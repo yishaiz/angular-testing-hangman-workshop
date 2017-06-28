@@ -125,5 +125,29 @@ describe('LetterComponent - revealed', () => {
         );
     });
 
+
+    it('should be revealed as when letter is being guesses', () => {
+        component.char = "a";
+
+        fixture.detectChanges();
+
+        fixture.whenStable().then(() => {
+                // fixture.detectChanges();
+
+                expect(component.isWhitespace()).toBe(false);
+                expect(component.isRevealed()).toBe(false);
+
+                component.isGuessed = true;
+
+                fixture.detectChanges();
+
+                expect(component.isWhitespace()).toBe(false);
+                expect(component.isRevealed()).toBe(false);
+
+            }
+        );
+    });
+
 });
 // ---------------------------
+
