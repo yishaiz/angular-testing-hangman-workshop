@@ -56,8 +56,22 @@ describe('GameService', () => {
 
         expect(service.isSelectedLetter("a")).toBe(false);
         expect(service.isSelectedLetter("f")).toBe(true);
+  }));
 
-    }));
+  it('should select a key in keyboard - select - another test', inject([ GameService ], (service : GameService) => {
+    //no need this:
+    // service.setWordToGuess("another word");
+
+    // no dependency
+
+    service.selectLetter('g');
+    service.selectLetter('z');
+    service.selectLetter('t');
+
+    expect(service.isSelectedLetter("a")).toBe(false);
+    expect(service.isSelectedLetter("f")).toBe(false);
+    expect(service.isSelectedLetter("g")).toBe(true);
+  }));
 
 
 });
