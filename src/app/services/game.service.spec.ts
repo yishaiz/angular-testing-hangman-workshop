@@ -31,10 +31,21 @@ describe('GameService', () => {
         // expect(service.getWordToGuess()).toBe("guess");
         expect(service.getWordToGuess()).toBe("another word");
     }));
-  it('should have the characters in keyboard', inject([ GameService ], (service : GameService) => {
-    //no need this:
-    // service.setWordToGuess("another word");
 
-    expect(service.keyboardLetters).toBe('abcdefghijklmnopqrstuvwxyz');
-  }));
+    it('should have the characters in keyboard', inject([ GameService ], (service : GameService) => {
+        //no need this:
+        // service.setWordToGuess("another word");
+
+        expect(service.keyboardLetters).toBe('abcdefghijklmnopqrstuvwxyz');
+    }));
+
+    // --------------------------------------------------
+
+    it('should select a key in keyboard', inject([ GameService ], (service : GameService) => {
+        //no need this:
+        // service.setWordToGuess("another word");
+
+        expect(service.isSelectedLetter("a")).toBe(false);
+
+    }));
 });

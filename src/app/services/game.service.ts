@@ -6,8 +6,8 @@ export class GameService {
     constructor() {
     }
 
-    private word : string = "guess";
-  public keyboardLetters : string = "abcdefghijklmnopqrstuvwxyz";
+    private word : string           = "guess";
+    public keyboardLetters : string = "abcdefghijklmnopqrstuvwxyz";
 
     getWordToGuess() : string {
         return this.word;
@@ -17,8 +17,13 @@ export class GameService {
         return this.word.split('');
     }
 
-  setWordToGuess(word : string) : void {
-    this.word = word;
-  }
+    setWordToGuess(word : string) : void {
+        this.word = word;
+    }
+
+    isSelectedLetter(letter : string) : boolean {
+        return null;
+    }
+
 
 }
