@@ -21,7 +21,8 @@ describe('GameService', () => {
         const wordLetters : any[] =
                   [ 'g', 'u', 'e', 's', 's' ];
 
-        expect(service.getWordLetters()).toBe(wordLetters);
+    // expect(service.getWordLetters()).toBe(wordLetters);
+    expect(service.getWordLetters()).toEqual(wordLetters);
     }));
 
 
