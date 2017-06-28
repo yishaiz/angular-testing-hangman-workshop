@@ -1,16 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { KeyboardComponent } from './keyboard.component';
+import { GameService } from "../services/game.service";
 
 describe('KeyboardComponent', () => {
-  let component: KeyboardComponent;
-  let fixture: ComponentFixture<KeyboardComponent>;
+  let component : KeyboardComponent;
+  let fixture : ComponentFixture<KeyboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ KeyboardComponent ]
+      declarations : [
+        KeyboardComponent
+      ],
+      providers : [
+        GameService
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
