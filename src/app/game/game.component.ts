@@ -15,7 +15,7 @@ import { GameService } from "../services/game.service";
     <strong>Used Strikes : </strong>{{numberOfFailedStrikes}} / {{maxStrikes}}
 </div>
         <hr/>
-        <app-keyboard></app-keyboard>
+        <app-keyboard (selectLetter)="selectLetterByUser($event)"></app-keyboard>
     `,
     styles : []
 })
@@ -34,6 +34,12 @@ export class GameComponent implements OnInit {
 
     updateStrikesStatus(){
         this.numberOfFailedStrikes=this.gameService.getNumberOfFailedStrikes();
+    }
+
+    selectLetterByUser(letter : string){
+        this.gameService.selectLetter(letter);
+
+        this.updateStrikesStatus();
     }
 
 }
