@@ -15,6 +15,7 @@ export class GameService {
     private word : string              = "Welcome to TDD";
     public keyboardLetters : string    = "qwertyuiopasdfghjklzxcvbnm";
     private selectedLetters : string[] = [];
+    private guessedLetters : string[] = [];
 
     getMaxStrikes() : number {
         return this.maxStrikes;
@@ -77,6 +78,7 @@ export class GameService {
 
     checkStrike(letter : string) : void {
         if (this.doesWordContainGuessedLetter(letter)) {
+            this.guessedLetters.push(letter)
             return;
         }
 
