@@ -43,7 +43,11 @@ export class GameService {
     }
 
     getWordLetters() : string [] {
-        return this.word.split('');
+        // return this.word.split('');
+        return this
+            .word
+            .split('')
+            .map((char) => char.toUpperCase());
     }
 
     isUsedAllStrikes() : boolean {
@@ -69,15 +73,15 @@ export class GameService {
     isSelectedLetter(letter : string) : boolean {
         return this
                 .selectedLetters
-                .findIndex(l => l == letter) > -1;
+                .findIndex(l => l == letter.toUpperCase()) > -1;
     }
 
     selectLetter(letter : string) : void {
         // no need to check if already chosen
 
-        this.checkStrike(letter);
+        this.checkStrike(letter.toUpperCase());
 
-        this.selectedLetters.push(letter);
+        this.selectedLetters.push(letter.toUpperCase());
     }
 
     checkStrike(letter : string) : void {
@@ -123,5 +127,9 @@ export class GameService {
          return guessWordStatus;
 
          */
+    }
+
+    getRevealedWord() : string {
+        return this.getRevealedLettersArray().join('');
     }
 }

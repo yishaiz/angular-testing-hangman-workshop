@@ -6,8 +6,8 @@ import { GameService } from "./services/game.service";
 import { KeyboardComponent } from "./keyboard/keyboard.component";
 import { LetterComponent } from "./letter/letter.component";
 import { FormsModule } from "@angular/forms";
-import { DisplayLetterComponent } from "./display-letter/display-letter.component";
 import { DisplayPictureComponent } from "./display-picture/display-picture.component";
+import { DisplayWordComponent } from "./display-word/display-word.component";
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -17,7 +17,7 @@ describe('AppComponent', () => {
                 GameComponent,
                 KeyboardComponent,
                 LetterComponent,
-                DisplayLetterComponent,
+                DisplayWordComponent,
                 DisplayPictureComponent
             ],
             providers : [

@@ -21,7 +21,8 @@ describe('GameService', () => {
 
     it('should have a guess word letters', inject([ GameService ], (gameService : GameService) => {
         const wordLetters : any[] =
-                  [ 'W', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'T', 'D', 'D' ];
+                      [ 'W', 'E', 'L', 'C', 'O', 'M', 'E', ' ', 'T', 'O', ' ', 'T', 'D', 'D' ];
+              // [ 'W', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'T', 'D', 'D' ];
 
         // expect(gameService.getWordLetters()).toBe(wordLetters);
         expect(gameService.getWordLetters()).toEqual(wordLetters);
@@ -125,8 +126,8 @@ describe('GameService', () => {
     it('should check if word contains guessed letter', inject([ GameService ], (gameService : GameService) => {
         gameService.setWordToGuess('abcdefg');
 
-        expect(gameService.doesWordContainGuessedLetter('a')).toBe(true);
-        expect(gameService.doesWordContainGuessedLetter('r')).not.toBe(true);
+        expect(gameService.doesWordContainGuessedLetter('A')).toBe(true);
+        expect(gameService.doesWordContainGuessedLetter('R')).not.toBe(true);
     }));
 
     // --------------------------------------------------

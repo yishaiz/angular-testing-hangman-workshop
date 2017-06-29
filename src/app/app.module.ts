@@ -7,8 +7,8 @@ import { GameService } from "./services/game.service";
 import { KeyboardComponent } from './keyboard/keyboard.component';
 import { LetterComponent } from './letter/letter.component';
 import { LoginComponent } from './login/login.component';
-import { DisplayLetterComponent } from './display-letter/display-letter.component';
 import { DisplayPictureComponent } from './display-picture/display-picture.component';
+import { DisplayWordComponent } from './display-word/display-word.component';
 
 @NgModule({
     declarations : [
@@ -17,8 +17,8 @@ import { DisplayPictureComponent } from './display-picture/display-picture.compo
         KeyboardComponent,
         LetterComponent,
         LoginComponent,
-        DisplayLetterComponent,
-        DisplayPictureComponent
+        DisplayPictureComponent,
+        DisplayWordComponent
     ],
     imports : [
         BrowserModule

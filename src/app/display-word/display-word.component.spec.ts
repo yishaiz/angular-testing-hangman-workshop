@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DisplayLetterComponent } from './display-letter.component';
+import { DisplayWordComponent } from './display-word.component';
 
-describe('DisplayLetterComponent', () => {
-  let component: DisplayLetterComponent;
-  let fixture: ComponentFixture<DisplayLetterComponent>;
+describe('DisplayWordComponent', () => {
+  let component: DisplayWordComponent;
+  let fixture: ComponentFixture<DisplayWordComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayLetterComponent ]
+      declarations: [ DisplayWordComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DisplayLetterComponent);
+    fixture = TestBed.createComponent(DisplayWordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

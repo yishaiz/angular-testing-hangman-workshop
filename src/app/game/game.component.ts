@@ -9,11 +9,11 @@ import { GameService } from "../services/game.service";
             <app-display-picture></app-display-picture>
         </div>
         <div>
-            <app-display-letter></app-display-letter>
+            <app-display-word [word]="revealedWord"></app-display-word>
         </div>
-<div>
-    <strong>Used Strikes : </strong>{{numberOfFailedStrikes}} / {{maxStrikes}}
-</div>
+        <div>
+            <strong>Used Strikes : </strong>{{numberOfFailedStrikes}} / {{maxStrikes}}
+        </div>
         <hr/>
         <app-keyboard (selectLetter)="selectLetterByUser($event)"></app-keyboard>
     `,
@@ -21,22 +21,24 @@ import { GameService } from "../services/game.service";
 })
 export class GameComponent implements OnInit {
 
-      maxStrikes : number            ;
-      numberOfFailedStrikes : number  ;
+    maxStrikes : number;
+    numberOfFailedStrikes : number;
+    revealedWord : string;
 
     constructor(private  gameService : GameService) {
     }
 
     ngOnInit() {
-        this.maxStrikes=this.gameService.getMaxStrikes();
+        this.maxStrikes = this.gameService.getMaxStrikes();
         this.updateStrikesStatus();
     }
 
-    updateStrikesStatus(){
-        this.numberOfFailedStrikes=this.gameService.getNumberOfFailedStrikes();
+    updateStrikesStatus() {
+        this.numberOfFailedStrikes = this.gameService.getNumberOfFailedStrikes();
+        this.revealedWord          = this.gameService.getRevealedWord();
     }
 
-    selectLetterByUser(letter : string){
+    selectLetterByUser(letter : string) {
         this.gameService.selectLetter(letter);
 
         this.updateStrikesStatus();
