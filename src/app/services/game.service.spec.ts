@@ -177,6 +177,17 @@ describe('GameService', () => {
     }));
 
 
+    it('should check winning', inject([ GameService ], (gameService : GameService) => {
+        gameService.setWordToGuess('abc');
+
+        gameService.selectLetter('a');
+        gameService.selectLetter('b');
+        expect(gameService.isWin()).toBe(false);
+
+        gameService.selectLetter('c');
+        expect(gameService.isWin()).toBe(true);
+    }));
+
 
 
 });
