@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-display-picture',
-  template: `
-    <p>
-      display-picture Works!
-    </p>
-  `,
-  styles: []
+    selector : 'app-display-picture',
+    templateUrl : './display-picture.component.html',
+    styles : [ `
+        .container {
+          transform: scale(0.5, 0.5);
+        }
+    ` ]
 })
 export class DisplayPictureComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+    @Input() failsCounter : number = 0;
+
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }

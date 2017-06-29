@@ -6,7 +6,8 @@ import { GameService } from "../services/game.service";
     template : `
         <!--<p> guess a letter </p>-->
         <div>
-            <app-display-picture></app-display-picture>
+            <!--<app-display-picture [failsCounter]="'8'"></app-display-picture>-->
+            <app-display-picture [failsCounter]="numberOfFailedStrikes"></app-display-picture>
         </div>
         <div>
             <app-display-word [word]="revealedWord"></app-display-word>
