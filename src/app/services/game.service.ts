@@ -6,9 +6,31 @@ export class GameService {
     constructor() {
     }
 
-    private word : string              = "guess";
-    public keyboardLetters : string    = "abcdefghijklmnopqrstuvwxyz";
+    //should be from config or service.
+    // Todo: test for this.
+    private maxStrike : number            = 8;
+    private numberOfFailedStrike : number = 0;
+
+
+    private word : string              = "Welcome to TDD";
+    public keyboardLetters : string    = "qwertyuiopasdfghjklzxcvbnm";
     private selectedLetters : string[] = [];
+
+    getMaxStrike() : number {
+        return this.maxStrike;
+    }
+
+    getNumberOfFailedStrike() : number {
+        return this.numberOfFailedStrike;
+    }
+
+    isGameOver() : boolean {
+        return null;
+    }
+
+    isWin() : boolean {
+        return null;
+    }
 
     getWordToGuess() : string {
         return this.word;
@@ -28,8 +50,6 @@ export class GameService {
     }
 
     isSelectedLetter(letter : string) : boolean {
-        // console.log(this.selectedLetters.findIndex(l => l == letter));
-
         return this
                 .selectedLetters
                 .findIndex(l => l == letter) > -1;

@@ -6,40 +6,41 @@ import { LetterComponent } from "../letter/letter.component";
 import { FormsModule } from "@angular/forms";
 
 describe('KeyboardComponent', () => {
-  let component : KeyboardComponent;
-  let fixture : ComponentFixture<KeyboardComponent>;
+    let component : KeyboardComponent;
+    let fixture : ComponentFixture<KeyboardComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations : [
-        KeyboardComponent,
-        LetterComponent
-      ],
-      providers : [
-        GameService
-      ],
-      imports : [
-        FormsModule
-      ]
-    })
-      .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations : [
+                KeyboardComponent,
+                LetterComponent
+            ],
+            providers : [
+                GameService
+            ],
+            imports : [
+                FormsModule
+            ]
+        })
+               .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(KeyboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture   = TestBed.createComponent(KeyboardComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
-  it(`should have letters'`, () => {
-    const expected : string[] = "abcdefghijklmnopqrstuvwxyz".split('');
-    const fixture = TestBed.createComponent(KeyboardComponent);
-    const app = fixture.debugElement.componentInstance;
-    fixture.detectChanges();
-    expect(app.keyboardLetters).toEqual(expected);
-  });
+    it('should be created', () => {
+        expect(component).toBeTruthy();
+    });
+
+    it(`should have letters'`, () => {
+        const expected : string[] = "qwertyuiopasdfghjklzxcvbnm".split('');
+        const fixture             = TestBed.createComponent(KeyboardComponent);
+        const app                 = fixture.debugElement.componentInstance;
+        fixture.detectChanges();
+        expect(app.keyboardLetters).toEqual(expected);
+    });
 
 });

@@ -7,6 +7,8 @@ import { GameService } from "./services/game.service";
 import { KeyboardComponent } from './keyboard/keyboard.component';
 import { LetterComponent } from './letter/letter.component';
 import { LoginComponent } from './login/login.component';
+import { DisplayLetterComponent } from './display-letter/display-letter.component';
+import { DisplayPictureComponent } from './display-picture/display-picture.component';
 
 @NgModule({
     declarations : [
@@ -14,7 +16,9 @@ import { LoginComponent } from './login/login.component';
         GameComponent,
         KeyboardComponent,
         LetterComponent,
-        LoginComponent
+        LoginComponent,
+        DisplayLetterComponent,
+        DisplayPictureComponent
     ],
     imports : [
         BrowserModule

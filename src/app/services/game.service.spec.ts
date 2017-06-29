@@ -16,22 +16,21 @@ describe('GameService', () => {
     }));
 
     it('should have a guess word', inject([ GameService ], (gameService : GameService) => {
-        expect(gameService.getWordToGuess()).toBe("guess");
+        expect(gameService.getWordToGuess()).toBe("Welcome to TDD");
     }));
 
     it('should have a guess word letters', inject([ GameService ], (gameService : GameService) => {
         const wordLetters : any[] =
-                  [ 'g', 'u', 'e', 's', 's' ];
+                  [ 'W', 'e', 'l', 'c', 'o' ,'m' ,'e', ' ', 't','o', ' ','T','D','D' ];
 
         // expect(gameService.getWordLetters()).toBe(wordLetters);
         expect(gameService.getWordLetters()).toEqual(wordLetters);
     }));
 
-
     it('should give a guess word - another word', inject([ GameService ], (gameService : GameService) => {
         gameService.setWordToGuess("another word");
 
-        // expect(gameService.getWordToGuess()).toBe("guess");
+        // expect(gameService.getWordToGuess()).toBe("Welcome to TDD");
         expect(gameService.getWordToGuess()).toBe("another word");
     }));
 
@@ -40,7 +39,7 @@ describe('GameService', () => {
         //no need this:
         // gameService.setWordToGuess("another word");
 
-        expect(gameService.keyboardLetters).toBe('abcdefghijklmnopqrstuvwxyz');
+        expect(gameService.keyboardLetters).toBe('qwertyuiopasdfghjklzxcvbnm');
     }));
 
     // --------------------------------------------------
