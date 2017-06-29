@@ -28,7 +28,7 @@ export class GameService {
     isGameOver() : boolean {
         // return null;
         // return this.isUsedAllStrikes();
-        return this.isUsedAllStrikes();
+        return this.isUsedAllStrikes() || this.isWin();
     }
 
     isWin() : boolean {
