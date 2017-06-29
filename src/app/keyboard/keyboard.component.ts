@@ -4,11 +4,43 @@ import { GameService } from "../services/game.service";
 @Component({
     selector : 'app-keyboard',
     template : `
+        <!--
         <app-letter
                 *ngFor="let key of keyboardLetters"
                 [char]="key" 
                 (keyPress)="selectKey($event)">
         </app-letter>
+        -->
+        <div>
+        <span *ngFor="let key of keyboardLetters; let i=index">
+            <app-letter
+                    *ngIf="i<10"
+                    [char]="key"
+                    (keyPress)="selectKey($event)">
+            </app-letter>
+        </span>
+        </div>
+
+        <div>
+        <span *ngFor="let key of keyboardLetters; let i=index">
+            <app-letter
+                    *ngIf="i>=10 && i<19"
+                    [char]="key"
+                    (keyPress)="selectKey($event)">
+            </app-letter>
+        </span>
+        </div>
+
+        <div>
+        <span *ngFor="let key of keyboardLetters; let i=index">
+            <app-letter
+                    *ngIf="i>=19"
+                    [char]="key"
+                    (keyPress)="selectKey($event)">
+            </app-letter>
+        </span>
+        </div>
+
     `,
     styles : []
 })

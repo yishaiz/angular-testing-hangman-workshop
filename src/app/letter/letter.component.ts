@@ -3,9 +3,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
     selector : 'app-letter',
     template : `
-        <button type="button" (click)="keyClick()">{{char}}</button>
-        <!--ngClass="getItemStyle()"-->
+        <button
+                type="button"
+                [ngClass]="getItemClass()"
+                (click)="keyClick()">{{char}}
+        </button>
+
     `,
+
     styles : []
 })
 export class LetterComponent implements OnInit {
@@ -51,9 +56,10 @@ export class LetterComponent implements OnInit {
     }
 
 
-    /*getItemClass(): any{
-     return {'aabb' : true};
-     // return null;
-     }
-     */
+    getItemClass() : any {
+        return {
+            'btn-default' : this.isSelectedLetter,
+            'btn-primary' : !this.isSelectedLetter
+        };
+    }
 }
