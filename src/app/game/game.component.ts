@@ -11,6 +11,9 @@ import { GameService } from "../services/game.service";
         <div>
             <app-display-letter></app-display-letter>
         </div>
+<div>
+    <strong>Used Strikes : </strong>{{numberOfFailedStrikes}} / {{maxStrikes}}
+</div>
         <hr/>
         <app-keyboard></app-keyboard>
     `,
@@ -18,12 +21,19 @@ import { GameService } from "../services/game.service";
 })
 export class GameComponent implements OnInit {
 
+      maxStrikes : number            ;
+      numberOfFailedStrikes : number  ;
 
     constructor(private  gameService : GameService) {
     }
 
     ngOnInit() {
-     }
+        this.maxStrikes=this.gameService.getMaxStrikes();
+        this.updateStrikesStatus();
+    }
 
- 
+    updateStrikesStatus(){
+        this.numberOfFailedStrikes=this.gameService.getNumberOfFailedStrikes();
+    }
+
 }
