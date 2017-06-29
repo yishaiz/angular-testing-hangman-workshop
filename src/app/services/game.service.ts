@@ -40,9 +40,11 @@ export class GameService {
     }
 
 
-        doesWordContainGuessedLetter(letter : string) : boolean {
-            return null;
-        }
+    doesWordContainGuessedLetter(letter : string) : boolean {
+        return this
+                .getWordLetters()
+                .findIndex(l => l == letter) > -1;
+    }
 
 
     //no test
