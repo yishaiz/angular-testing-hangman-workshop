@@ -160,6 +160,22 @@ describe('GameService', () => {
      }));
 
 
+    it('should check number of strikes - use all strikes', inject([ GameService ], (gameService : GameService) => {
+        gameService.setWordToGuess('abc');
+
+        gameService.selectLetter('q');
+        gameService.selectLetter('w');
+        gameService.selectLetter('e');
+        gameService.selectLetter('r');
+        gameService.selectLetter('t');
+        gameService.selectLetter('y');
+        gameService.selectLetter('u');
+        expect(gameService.isUsedAllStrikes()).toBe(false);
+
+        gameService.selectLetter('i');
+        expect(gameService.isUsedAllStrikes()).toBe(true);
+    }));
+
 
 
 

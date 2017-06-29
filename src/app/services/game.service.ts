@@ -39,6 +39,9 @@ export class GameService {
         return this.word.split('');
     }
 
+    isUsedAllStrikes() : boolean {
+        return null;
+    }
 
     doesWordContainGuessedLetter(letter : string) : boolean {
         return this
