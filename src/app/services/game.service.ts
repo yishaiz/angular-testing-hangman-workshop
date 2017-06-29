@@ -8,7 +8,7 @@ export class GameService {
 
     //should be from config or service.
     // Todo: test for this.
-    private maxStrikes : number            = 8;
+    private maxStrikes : number           = 8;
     private numberOfFailedStrike : number = 0;
 
     private word : string              = "Welcome to TDD";
@@ -38,6 +38,12 @@ export class GameService {
     getWordLetters() : string [] {
         return this.word.split('');
     }
+
+
+        doesWordContainGuessedLetter(letter : string) : boolean {
+            return null;
+        }
+
 
     //no test
     getKeyboardLetters() : string [] {

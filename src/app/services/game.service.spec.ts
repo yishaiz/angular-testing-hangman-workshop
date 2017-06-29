@@ -103,23 +103,31 @@ describe('GameService', () => {
     //  check number of strikes
 
 
-        it('should check number of strikes', inject([ GameService ], (gameService : GameService) => {
-            gameService.setWordToGuess('client side testing');
+    it('should check number of strikes', inject([ GameService ], (gameService : GameService) => {
+        gameService.setWordToGuess('client side testing');
 
-            gameService.selectLetter('a');
-            expect(gameService.getNumberOfFailedStrikes()).toBe(1);
+        gameService.selectLetter('a');
+        expect(gameService.getNumberOfFailedStrikes()).toBe(1);
 
-            gameService.selectLetter('b');
-            expect(gameService.getNumberOfFailedStrikes()).toBe(2);
+        gameService.selectLetter('b');
+        expect(gameService.getNumberOfFailedStrikes()).toBe(2);
 
-            gameService.selectLetter('t');
-            expect(gameService.getNumberOfFailedStrikes()).toBe(2);
+        gameService.selectLetter('t');
+        expect(gameService.getNumberOfFailedStrikes()).toBe(2);
 
-            gameService.selectLetter('a');
-            expect(gameService.getNumberOfFailedStrikes()).toBe(2);
+        gameService.selectLetter('a');
+        expect(gameService.getNumberOfFailedStrikes()).toBe(2);
 
-            gameService.selectLetter('t');
-            expect(gameService.getNumberOfFailedStrikes()).toBe(2);
-        }));
+        gameService.selectLetter('t');
+        expect(gameService.getNumberOfFailedStrikes()).toBe(2);
+    }));
+
+    it('should check if word contains guessed letter', inject([ GameService ], (gameService : GameService) => {
+        gameService.setWordToGuess('abcdefg');
+
+        expect(gameService.doesWordContainGuessedLetter('a')).toBe(true);
+        expect(gameService.doesWordContainGuessedLetter('r')).not.toBe(true);
+    }));
+
 
 });
