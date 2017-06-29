@@ -11,7 +11,6 @@ import { GameService } from "../services/game.service";
         <div>
             <app-display-letter></app-display-letter>
         </div>
-
         <hr/>
         <app-keyboard></app-keyboard>
     `,
@@ -19,10 +18,12 @@ import { GameService } from "../services/game.service";
 })
 export class GameComponent implements OnInit {
 
+
     constructor(private  gameService : GameService) {
     }
 
     ngOnInit() {
-    }
+     }
 
+ 
 }
