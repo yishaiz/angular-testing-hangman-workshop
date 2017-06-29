@@ -75,6 +75,10 @@ export class GameService {
             return;
         }
 
+        if(this.isSelectedLetter(letter)){
+            return;
+        }
+
         this.numberOfFailedStrike++;
     }
 
