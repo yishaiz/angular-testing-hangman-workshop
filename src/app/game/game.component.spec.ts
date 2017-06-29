@@ -27,6 +27,8 @@ describe('GameComponent', () => {
                .compileComponents();
     }));
 
+    // todo: should test a stub instead of service !
+
     beforeEach(() => {
         fixture   = TestBed.createComponent(GameComponent);
         component = fixture.componentInstance;

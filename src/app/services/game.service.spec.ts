@@ -21,7 +21,7 @@ describe('GameService', () => {
 
     it('should have a guess word letters', inject([ GameService ], (gameService : GameService) => {
         const wordLetters : any[] =
-                  [ 'W', 'e', 'l', 'c', 'o' ,'m' ,'e', ' ', 't','o', ' ','T','D','D' ];
+                  [ 'W', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'T', 'D', 'D' ];
 
         // expect(gameService.getWordLetters()).toBe(wordLetters);
         expect(gameService.getWordLetters()).toEqual(wordLetters);
@@ -97,5 +97,29 @@ describe('GameService', () => {
         gameService.selectLetter('t');
         expect(gameService.getRevealedLettersArray()).toEqual('__i__t _i__ t__ti__'.split(''));
     }));
+
+
+    // --------------------------------------------------
+    //  check number of strikes
+
+
+        it('should check number of strikes', inject([ GameService ], (gameService : GameService) => {
+            gameService.setWordToGuess('client side testing');
+
+            gameService.selectLetter('a');
+            expect(gameService.getNumberOfFailedStrikes()).toBe(1);
+
+            gameService.selectLetter('b');
+            expect(gameService.getNumberOfFailedStrikes()).toBe(2);
+
+            gameService.selectLetter('t');
+            expect(gameService.getNumberOfFailedStrikes()).toBe(2);
+
+            gameService.selectLetter('a');
+            expect(gameService.getNumberOfFailedStrikes()).toBe(2);
+
+            gameService.selectLetter('t');
+            expect(gameService.getNumberOfFailedStrikes()).toBe(2);
+        }));
 
 });

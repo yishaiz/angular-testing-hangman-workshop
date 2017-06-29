@@ -8,19 +8,18 @@ export class GameService {
 
     //should be from config or service.
     // Todo: test for this.
-    private maxStrike : number            = 8;
+    private maxStrikes : number            = 8;
     private numberOfFailedStrike : number = 0;
-
 
     private word : string              = "Welcome to TDD";
     public keyboardLetters : string    = "qwertyuiopasdfghjklzxcvbnm";
     private selectedLetters : string[] = [];
 
-    getMaxStrike() : number {
-        return this.maxStrike;
+    getMaxStrikes() : number {
+        return this.maxStrikes;
     }
 
-    getNumberOfFailedStrike() : number {
+    getNumberOfFailedStrikes() : number {
         return this.numberOfFailedStrike;
     }
 
