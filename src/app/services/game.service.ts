@@ -66,6 +66,16 @@ export class GameService {
         // no need to check if already chosen
 
         this.selectedLetters.push(letter);
+
+        this.checkStrike(letter);
+    }
+
+    checkStrike (letter : string) : void{
+        if(this.doesWordContainGuessedLetter(letter)){
+            return;
+        }
+
+        this.numberOfFailedStrike++;
     }
 
     getRevealedLettersArray() : string [] {
