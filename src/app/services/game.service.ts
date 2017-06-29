@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { max } from "rxjs/operator/max";
 
 @Injectable()
 export class GameService {
@@ -8,8 +9,8 @@ export class GameService {
 
     //should be from config or service.
     // Todo: test for this.
-    private maxStrikes : number           = 8;
-    private numberOfFailedStrike : number = 0;
+    private maxStrikes : number            = 8;
+    private numberOfFailedStrikes : number = 0;
 
     private word : string              = "Welcome to TDD";
     public keyboardLetters : string    = "qwertyuiopasdfghjklzxcvbnm";
@@ -20,7 +21,7 @@ export class GameService {
     }
 
     getNumberOfFailedStrikes() : number {
-        return this.numberOfFailedStrike;
+        return this.numberOfFailedStrikes;
     }
 
     isGameOver() : boolean {
@@ -40,7 +41,7 @@ export class GameService {
     }
 
     isUsedAllStrikes() : boolean {
-        return null;
+        return this.numberOfFailedStrikes >= this.maxStrikes;
     }
 
     doesWordContainGuessedLetter(letter : string) : boolean {
@@ -82,7 +83,7 @@ export class GameService {
             return;
         }
 
-        this.numberOfFailedStrike++;
+        this.numberOfFailedStrikes++;
     }
 
     getRevealedLettersArray() : string [] {
