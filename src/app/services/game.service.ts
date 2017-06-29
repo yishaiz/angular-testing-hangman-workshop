@@ -65,10 +65,10 @@ export class GameService {
     selectLetter(letter : string) : void {
         // no need to check if already chosen
 
-        this.selectedLetters.push(letter);
-
         this.checkStrike(letter);
-    }
+
+        this.selectedLetters.push(letter);
+}
 
     checkStrike (letter : string) : void{
         if(this.doesWordContainGuessedLetter(letter)){
