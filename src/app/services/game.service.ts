@@ -15,7 +15,7 @@ export class GameService {
     private word : string              = "Welcome to TDD";
     public keyboardLetters : string    = "qwertyuiopasdfghjklzxcvbnm";
     private selectedLetters : string[] = [];
-    private guessedLetters : string[] = [];
+    private guessedLetters : string[]  = [];
 
     getMaxStrikes() : number {
         return this.maxStrikes;
@@ -31,7 +31,10 @@ export class GameService {
     }
 
     isWin() : boolean {
-        return null;
+        return this.getWordLetters()
+                   .every((letter) => {
+                       return this.guessedLetters.findIndex(l => l == letter) > -1;
+                   });
     }
 
     getWordToGuess() : string {
