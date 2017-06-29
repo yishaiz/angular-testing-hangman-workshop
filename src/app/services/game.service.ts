@@ -68,14 +68,14 @@ export class GameService {
         this.checkStrike(letter);
 
         this.selectedLetters.push(letter);
-}
+    }
 
-    checkStrike (letter : string) : void{
-        if(this.doesWordContainGuessedLetter(letter)){
+    checkStrike(letter : string) : void {
+        if (this.doesWordContainGuessedLetter(letter)) {
             return;
         }
 
-        if(this.isSelectedLetter(letter)){
+        if (this.isSelectedLetter(letter)) {
             return;
         }
 

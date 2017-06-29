@@ -129,5 +129,38 @@ describe('GameService', () => {
         expect(gameService.doesWordContainGuessedLetter('r')).not.toBe(true);
     }));
 
+    // --------------------------------------------------
+    //  check end of game
+
+    it('should check number of strikes - win', inject([ GameService ], (gameService : GameService) => {
+        gameService.setWordToGuess('abc');
+
+        gameService.selectLetter('a');
+        gameService.selectLetter('b');
+        expect(gameService.isGameOver()).toBe(false);
+
+        gameService.selectLetter('c');
+        expect(gameService.isGameOver()).toBe(true);
+     }));
+
+    it('should check number of strikes - lost', inject([ GameService ], (gameService : GameService) => {
+        gameService.setWordToGuess('abc');
+
+        gameService.selectLetter('q');
+        gameService.selectLetter('w');
+        gameService.selectLetter('e');
+        gameService.selectLetter('r');
+        gameService.selectLetter('t');
+        gameService.selectLetter('y');
+        gameService.selectLetter('u');
+        expect(gameService.isGameOver()).toBe(false);
+
+        gameService.selectLetter('i');
+        expect(gameService.isGameOver()).toBe(true);
+     }));
+
+
+
+
 
 });
