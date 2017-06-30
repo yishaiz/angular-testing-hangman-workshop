@@ -6,8 +6,12 @@ import { GameService } from "../services/game.service";
     template : `
         <!--<p> guess a letter </p>-->
 
-        <button (click)="WinGame()" type="button" class="btn btn-primary">Win</button>
-        <button (click)="LostGame()" type="button" class="btn btn-primary">Lost</button>
+        <!--
+                <button (click)="WinGame()" type="button" class="btn btn-primary">Win</button>
+                <button (click)="LostGame()" type="button" class="btn btn-primary">Lost</button>
+        -->
+
+
         <div>
             <app-display-word [word]="revealedWord"></app-display-word>
         </div>
@@ -72,21 +76,20 @@ export class GameComponent implements OnInit {
         this.updateStrikesStatus();
     }
 
+/*
 
     LostGame() : void {
-        // alert("lost");
         console.log("lost");
 
         this.isGameOver = true;
     }
 
     WinGame() : void {
-        // alert("win");
-        // alert("win");
         console.log("win");
         this.isGameOver = true;
         this.isWin      = true;
     }
 
+*/
 
 }

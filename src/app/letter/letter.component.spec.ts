@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LetterComponent } from './letter.component';
-import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from "@angular/core";
+import {  DebugElement } from "@angular/core";
+// import { CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 import { By } from "@angular/platform-browser";
 import { GameService } from "../services/game.service";
 
@@ -43,10 +44,10 @@ describe('LetterComponent', () => {
 
         fixture.whenStable().then(() => {
 
-            console.log(el)
+           /* console.log(el)
             console.log(el.firstChild)
             console.log(el.firstElementChild)
-
+*/
                 // expect(el.textContent).toBe('k');
                 expect(el.firstElementChild. textContent).toBe('k');
             }

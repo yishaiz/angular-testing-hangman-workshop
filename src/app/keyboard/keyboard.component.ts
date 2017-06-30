@@ -4,36 +4,37 @@ import { GameService } from "../services/game.service";
 @Component({
     selector : 'app-keyboard',
     template : `
-        <div>
-            <div *ngFor="let key of keyboardLetters; let i=index" class="keyboard-button">
-                <app-letter
-                        *ngIf="i<10"
-                        [char]="key"
-                        (keyPress)="selectKey($event)">
-                </app-letter>
+        <div class="keyboard">
+            <div>
+                <div *ngFor="let key of keyboardLetters; let i=index" class="keyboard-button">
+                    <app-letter
+                            *ngIf="i<10"
+                            [char]="key"
+                            (keyPress)="selectKey($event)">
+                    </app-letter>
+                </div>
             </div>
-        </div> 
 
-        <div class="clear-float">
-            <div *ngFor="let key of keyboardLetters; let i=index" class="keyboard-button">
-                <app-letter
-                        *ngIf="i>=10 && i<19"
-                        [char]="key"
-                        (keyPress)="selectKey($event)">
-                </app-letter>
+            <div class="clear-float">
+                <div *ngFor="let key of keyboardLetters; let i=index" class="keyboard-button">
+                    <app-letter
+                            *ngIf="i>=10 && i<19"
+                            [char]="key"
+                            (keyPress)="selectKey($event)">
+                    </app-letter>
+                </div>
+            </div>
+
+            <div class="clear-float">
+                <div *ngFor="let key of keyboardLetters; let i=index" class="keyboard-button">
+                    <app-letter
+                            *ngIf="i>=19"
+                            [char]="key"
+                            (keyPress)="selectKey($event)">
+                    </app-letter>
+                </div>
             </div>
         </div>
-
-        <div class="clear-float">
-            <div *ngFor="let key of keyboardLetters; let i=index" class="keyboard-button">
-                <app-letter
-                        *ngIf="i>=19"
-                        [char]="key"
-                        (keyPress)="selectKey($event)">
-                </app-letter>
-            </div>
-        </div>
-
     `,
     styles : []
 })

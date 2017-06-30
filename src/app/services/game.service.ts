@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { max } from "rxjs/operator/max";
+// import { max } from "rxjs/operator/max";
 
 @Injectable()
 export class GameService {
@@ -89,7 +89,7 @@ export class GameService {
 
     checkStrike(letter : string) : void {
         if (this.doesWordContainGuessedLetter(letter)) {
-            this.guessedLetters.push(letter)
+            this.guessedLetters.push(letter);
             return;
         }
 
@@ -101,7 +101,7 @@ export class GameService {
     }
 
     getRevealedLettersArray() : string [] {
-        const guessWordStatus = [];
+        // const guessWordStatus = [];
         const wordCharArray   = this.word.split('');
 
         return wordCharArray.map((char) => {

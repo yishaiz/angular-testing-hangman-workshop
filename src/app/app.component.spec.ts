@@ -5,7 +5,6 @@ import { GameComponent } from "./game/game.component";
 import { GameService } from "./services/game.service";
 import { KeyboardComponent } from "./keyboard/keyboard.component";
 import { LetterComponent } from "./letter/letter.component";
-import { FormsModule } from "@angular/forms";
 import { DisplayPictureComponent } from "./display-picture/display-picture.component";
 import { DisplayWordComponent } from "./display-word/display-word.component";
 import { DisplayPictureHeadComponent } from "./display-picture-head/display-picture-head.component";
