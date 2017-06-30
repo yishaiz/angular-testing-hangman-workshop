@@ -14,22 +14,16 @@
   width: 554px;
   left: 50%;
   margin-left: -277px;
+ }
 
-  div {
-
-  }
-}
-
-
-div.keyboard-button{
+div.keyboard-button {
   display: inline-block;
   float: left;
   margin: 2px;
 }
 
-.keyboard-button button{
+.keyboard-button button {
   text-transform: uppercase;
-
 
   &.btn-default {
     background: #222;
@@ -81,28 +75,92 @@ div.keyboard-button{
   }
 }
 
-.use-strikes{
+.use-strikes {
   color: #00F;
 }
 
-.hangman-picture{
-  width:600px;
-  height:600px;
-  border: groove 1px blue;
+.clear-float {
+  clear: left;
 }
 
-.clear-float{
-   clear: left;
-}
-
-
-.game-over{
+.game-over {
   color: #F00;
 }
 
-.game-over-win{
+.game-over-win {
   color: #080;
 }
+
+// hangman-picture
+
+.hangman-picture {
+  width: 600px;
+  height: 600px;
+  border: groove 1px blue;
+  position: relative;
+  top:70px;
+}
+
+.hangman-picture-head {
+  width: 400px;
+  height: 400px;
+  border: groove 1px blue;
+  position: relative;
+  top:-635px;
+  left:-633px;
+}
+
+//head
+
+.head-first {
+  transition: all 1.0s;
+  position: absolute;
+  top: 115px;
+  left: 635px
+}
+
+.head-second {
+  transition: all 1.0s;
+  position: absolute;
+  top: 250px;
+  left: 800px;
+  transform: rotate(180deg);
+}
+
+.head-third {
+  transition: all 0.3s;
+  position: absolute;
+  top: 220px;
+  left: 900px;
+  transform: rotate(200deg);
+}
+
+.head-fourth {
+  transition: all 0.3s;
+  position: absolute;
+  top: 350px;
+  left: 950px;
+  transform: rotate(240deg);
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: #285e8e;
+}
+
+.happy-head {
+  transform: rotateY(360deg);
+}
+
+
+/*
+div.head{
+  background-color:red;
+  position: absolute;
+  top:10px;
+  left:10px;
+}
+*/
 
 /*
 body{background-color: red;

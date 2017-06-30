@@ -5,6 +5,9 @@ import { GameService } from "../services/game.service";
     selector : 'app-game',
     template : `
         <!--<p> guess a letter </p>-->
+
+        <button (click)="WinGame()" type="button" class="btn btn-primary">Win</button>
+        <button (click)="LostGame()" type="button" class="btn btn-primary">Lost</button>
         <div>
             <app-display-word [word]="revealedWord"></app-display-word>
         </div>
@@ -27,9 +30,15 @@ import { GameService } from "../services/game.service";
         <div class="hangman-picture">
             <!--<app-display-picture [failsCounter]="'8'"></app-display-picture>-->
             <app-display-picture
+                    [failsCounter]="numberOfFailedStrikes">
+            </app-display-picture>
+        </div>
+        <div class="hangman-picture-head">
+            <!--<app-display-picture [failsCounter]="'8'"></app-display-picture>-->
+            <app-display-picture-head
                     [failsCounter]="numberOfFailedStrikes"
                     [isGameOver]="isGameOver"
-                    [isWin]="isWin"></app-display-picture>
+                    [isWin]="isWin"></app-display-picture-head>
         </div>
     `,
     styles : []
@@ -62,4 +71,22 @@ export class GameComponent implements OnInit {
 
         this.updateStrikesStatus();
     }
+
+
+    LostGame() : void {
+        // alert("lost");
+        console.log("lost");
+
+        this.isGameOver = true;
+    }
+
+    WinGame() : void {
+        // alert("win");
+        // alert("win");
+        console.log("win");
+        this.isGameOver = true;
+        this.isWin      = true;
+    }
+
+
 }

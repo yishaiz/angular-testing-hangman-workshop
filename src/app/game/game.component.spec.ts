@@ -6,6 +6,7 @@ import { LetterComponent } from "../letter/letter.component";
 import { KeyboardComponent } from "../keyboard/keyboard.component";
 import { DisplayPictureComponent } from "../display-picture/display-picture.component";
 import { DisplayWordComponent } from "../display-word/display-word.component";
+import { DisplayPictureHeadComponent } from "../display-picture-head/display-picture-head.component";
 
 describe('GameComponent', () => {
     let component : GameComponent;
@@ -18,7 +19,8 @@ describe('GameComponent', () => {
                 KeyboardComponent,
                 LetterComponent,
                 DisplayWordComponent,
-                DisplayPictureComponent
+                DisplayPictureComponent,
+                DisplayPictureHeadComponent
             ],
             providers : [
                 GameService

@@ -1,0 +1,28 @@
+  <svg id="theHead" width="440" height="140" xmlns="http://www.w3.org/2000/svg" class="head-first">
+    <g>
+      <title>Layer 2 (Head)</title>
+
+      <ellipse *ngIf="(failsCounter > 2 || isWin) && failsCounter < 8"
+               ry="36" rx="34" id="svg_1" cy="84" cx="362"
+               stroke-width="5" stroke="#000000" fill="#0000ff"/>
+      <ellipse *ngIf="failsCounter == 8"
+               ry="36" rx="34" id="svg_1" cy="84" cx="362"
+               stroke-width="5" stroke="#000000" fill="#ff0000"/>
+
+      <ellipse *ngIf="(failsCounter > 2 || isWin)"
+               rx="1" id="svg_2" cy="164" cx="153"
+               stroke-width="5" stroke="#000000" fill="#bfbfbf"/>
+
+      <ellipse *ngIf="(failsCounter > 2 || isWin)"
+               ry="5" rx="5" id="svg_3" cy="72" cx="353"
+               stroke-width="5" stroke="#000000" fill="#bfbfbf"/>
+
+      <ellipse *ngIf="(failsCounter > 2 || isWin)"
+               ry="5" rx="6" id="svg_5" cy="72" cx="374"
+               stroke-width="5" stroke="#000000" fill="#bfbfbf"/>
+
+      <line *ngIf="(failsCounter > 2 || isWin)"
+            id="svg_6" y2="93" x2="379" y1="97" x1="347"
+            stroke-width="5" stroke="#000000" fill="none"/>
+    </g>
+  </svg>
