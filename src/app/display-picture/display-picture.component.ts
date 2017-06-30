@@ -13,6 +13,8 @@ export class DisplayPictureComponent implements OnInit {
 
 
     @Input() failsCounter : number = 0;
+    @Input() isWin : boolean = false;
+    @Input() isGameOver : boolean = false;
 
     constructor() {
     }
