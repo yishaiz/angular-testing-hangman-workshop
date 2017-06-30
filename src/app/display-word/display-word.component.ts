@@ -3,9 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
     selector : 'app-display-word',
     template : `
-        <p>
+        <h2>
             {{word}}
-        </p>
+        </h2>
     `,
     styles : []
 })

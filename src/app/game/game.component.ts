@@ -6,17 +6,23 @@ import { GameService } from "../services/game.service";
     template : `
         <!--<p> guess a letter </p>-->
         <div>
+            <app-display-word [word]="revealedWord"></app-display-word>
+        </div>
+
+        <div>
+            <h3 class="use-strikes">
+                <strong>Used Strikes : </strong>{{numberOfFailedStrikes}} / {{maxStrikes}}
+            </h3>
+        </div>
+
+        <hr/>
+
+        <app-keyboard (selectLetter)="selectLetterByUser($event)"></app-keyboard>
+
+        <div class="hangman-picture">
             <!--<app-display-picture [failsCounter]="'8'"></app-display-picture>-->
             <app-display-picture [failsCounter]="numberOfFailedStrikes"></app-display-picture>
         </div>
-        <div>
-            <app-display-word [word]="revealedWord"></app-display-word>
-        </div>
-        <div>
-            <strong>Used Strikes : </strong>{{numberOfFailedStrikes}} / {{maxStrikes}}
-        </div>
-        <hr/>
-        <app-keyboard (selectLetter)="selectLetterByUser($event)"></app-keyboard>
     `,
     styles : []
 })
@@ -44,5 +50,4 @@ export class GameComponent implements OnInit {
 
         this.updateStrikesStatus();
     }
-
 }

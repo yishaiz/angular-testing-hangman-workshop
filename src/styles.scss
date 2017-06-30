@@ -1,8 +1,8 @@
 .result {
-  font-size:40px;
-  text-align:center;
-  margin-top:20px;
-  height:60px;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 20px;
+  height: 60px;
 }
 
 .keyboard {
@@ -15,39 +15,48 @@
   left: 50%;
   margin-left: -277px;
 
-  button {
-    text-transform: uppercase;
-    display: inline-block;
-    float: left;
-    margin: 2px;
+  div {
 
-    &.btn-default {
-      background: #222;
-      color: #eee;
-      border-color: #444;
-    }
+  }
+}
 
-    &.btn-default[disabled] {
-      background: #eee;
-      color: #333;
-    }
 
-    &.btn-default:hover {
-      background: #111;
-      color: #eee;
-    }
+div.keyboard-button{
+  display: inline-block;
+  float: left;
+  margin: 2px;
+}
 
-    &:nth-child(11), &:nth-child(20) {
-      clear: left;
-    }
+.keyboard-button button{
+  text-transform: uppercase;
 
-    &:nth-child(11) {
-      margin-left: 14px;
-    }
 
-    &:nth-child(20) {
-      margin-left: 28px;
-    }
+  &.btn-default {
+    background: #222;
+    color: #eee;
+    border-color: #444;
+  }
+
+  &.btn-default[disabled] {
+    background: #eee;
+    color: #333;
+  }
+
+  &.btn-default:hover {
+    background: #111;
+    color: #eee;
+  }
+
+  &:nth-child(11), &:nth-child(20) {
+    clear: left;
+  }
+
+  &:nth-child(11) {
+    margin-left: 14px;
+  }
+
+  &:nth-child(20) {
+    margin-left: 28px;
   }
 }
 
@@ -58,7 +67,7 @@
     text-align: center;
 
     small {
-      font-size:70%;
+      font-size: 70%;
     }
   }
 
@@ -72,6 +81,19 @@
   }
 }
 
+.use-strikes{
+  color: #00F;
+}
+
+.hangman-picture{
+  width:600px;
+  height:600px;
+  border: groove 1px blue;
+}
+
+.clear-float{
+   clear: left;
+}
 /*
 body{background-color: red;
   font-size: 18pt;  }*/

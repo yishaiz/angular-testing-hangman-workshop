@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
     templateUrl : './display-picture.component.html',
     styles : [ `
         .container {
-          transform: scale(0.5, 0.5);
+          /*transform: scale(0.5, 0.5);*/
         }
     ` ]
 })

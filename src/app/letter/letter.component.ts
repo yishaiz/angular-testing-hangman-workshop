@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { GameService } from "../services/game.service";
 
 @Component({
     selector : 'app-letter',
@@ -6,9 +7,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
         <button
                 type="button"
                 [ngClass]="getItemClass()"
+                class="btn btn-lg"
                 (click)="keyClick()">{{char}}
         </button>
-
     `,
 
     styles : []
@@ -29,7 +30,7 @@ export class LetterComponent implements OnInit {
 
     @Output() keyPress : EventEmitter<string> = new EventEmitter<string>();
 
-    constructor() {
+    constructor(private gameService : GameService   ) {
     }
 
     ngOnInit() {
@@ -38,6 +39,12 @@ export class LetterComponent implements OnInit {
     }
 
     keyClick() : void {
+
+        if(this.gameService.isGameOver())
+        {
+            return;
+        }
+
         this.keyPress.emit(this.char);
         this.isSelectedLetter = true;
     }
@@ -54,7 +61,6 @@ export class LetterComponent implements OnInit {
     isSelected() : boolean {
         return this.isSelectedLetter;
     }
-
 
     getItemClass() : any {
         return {
