@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LetterComponent } from './letter.component';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from "@angular/core";
 import { By } from "@angular/platform-browser";
+import { GameService } from "../services/game.service";
 
 describe('LetterComponent', () => {
     let component : LetterComponent;
@@ -14,6 +15,9 @@ describe('LetterComponent', () => {
         TestBed.configureTestingModule({
             declarations : [
                 LetterComponent
+            ],
+            providers:[
+                GameService
             ]
         })
                .compileComponents();
@@ -38,7 +42,13 @@ describe('LetterComponent', () => {
         fixture.detectChanges();
 
         fixture.whenStable().then(() => {
-                expect(el.textContent).toBe('k');
+
+            console.log(el)
+            console.log(el.firstChild)
+            console.log(el.firstElementChild)
+
+                // expect(el.textContent).toBe('k');
+                expect(el.firstElementChild. textContent).toBe('k');
             }
         );
     });
@@ -60,10 +70,7 @@ describe('LetterComponent', () => {
             expect(selectedKey).toBe(letter);
         });
     });
-
-
 });
-
 
 //check is revealed, is whitespace
 
@@ -79,6 +86,9 @@ describe('LetterComponent - revealed', () => {
             .configureTestingModule({
                 declarations : [
                     LetterComponent
+                ],
+                providers:[
+                    GameService
                 ]
             })
             .compileComponents();
@@ -95,7 +105,6 @@ describe('LetterComponent - revealed', () => {
     }));
 
 //check is revealed, is whitespace
-
 
     it('should be revealed as when letter is a whitespace', () => {
         component.char = " ";

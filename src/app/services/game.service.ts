@@ -32,10 +32,13 @@ export class GameService {
     }
 
     isWin() : boolean {
-        return this.getWordLetters()
-                   .every((letter) => {
-                       return this.guessedLetters.findIndex(l => l == letter) > -1;
-                   });
+
+        return this
+            .getWordLetters()
+            .filter(letter=> letter != ' ')
+            .every((letter) => {
+                return this.guessedLetters.findIndex(l => l == letter) > -1;
+            });
     }
 
     getWordToGuess() : string {
