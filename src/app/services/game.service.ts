@@ -23,8 +23,6 @@ export class GameService {
     }
 
     isSelectedLetter(letter : string) : boolean {
-        // console.log(this.selectedLetters.findIndex(l => l == letter));
-
         return this
                 .selectedLetters
                 .findIndex(l => l == letter) > -1;
