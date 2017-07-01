@@ -6,9 +6,9 @@ export class GameService {
     constructor() {
     }
 
-    private word : string           = "guess";
-    public keyboardLetters : string = "abcdefghijklmnopqrstuvwxyz";
-  selectedLetters : string[] = [];
+    private word : string              = "guess";
+    public keyboardLetters : string    = "abcdefghijklmnopqrstuvwxyz";
+    private selectedLetters : string[] = [];
 
     getWordToGuess() : string {
         return this.word;
@@ -22,13 +22,13 @@ export class GameService {
         this.word = word;
     }
 
-  isSelectedLetter(letter : string) : boolean {
-    // console.log(this.selectedLetters.findIndex(l => l == letter));
+    isSelectedLetter(letter : string) : boolean {
+        // console.log(this.selectedLetters.findIndex(l => l == letter));
 
-    return this
-        .selectedLetters
-        .findIndex(l => l == letter) > -1;
-  }
+        return this
+                .selectedLetters
+                .findIndex(l => l == letter) > -1;
+    }
 
 
 }
